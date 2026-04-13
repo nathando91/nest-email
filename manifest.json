@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Auto Login",
+  "version": "1.0",
+  "description": "Chrome extension to automatically log into Gmail with Email, Password, and 2FA.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://accounts.google.com/*", "https://mail.google.com/*"],
+      "js": ["totp.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://accounts.google.com/*",
+    "https://mail.google.com/*"
+  ]
+}

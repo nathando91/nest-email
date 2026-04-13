@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 340px; padding: 15px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    h3 { margin-top: 0; color: #202124; margin-bottom: 10px; font-size: 15px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+    p { font-size: 12px; color: #5f6368; margin-top: 0; margin-bottom: 10px; }
+    textarea, input[type="text"] { width: 100%; margin-bottom: 10px; padding: 8px; border: 1px solid #dadce0; border-radius: 4px; box-sizing: border-box; font-size: 13px; font-family: inherit; }
+    textarea { height: 60px; resize: vertical; }
+    textarea#emailContent { height: 120px; }
+    .btn-group { display: flex; gap: 10px; }
+    button { flex: 1; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 13px; }
+    .btn-primary { background: #1a73e8; color: white; }
+    .btn-primary:hover { background: #1557b0; }
+    .btn-secondary { background: #f1f3f4; color: #3c4043; }
+    .btn-secondary:hover { background: #e8eaed; }
+    .btn-danger { background: #ea4335; color: white; }
+    .btn-danger:hover { background: #d93025; }
+    .status { font-size: 12px; margin-top: 10px; text-align: center; color: #1a73e8; min-height: 15px; font-weight: bold; }
+    .section { margin-bottom: 15px; }
+    label { font-size: 12px; font-weight: bold; color: #202124; display: block; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h3>1. Gmail Auto Login</h3>
+    <textarea id="creds" placeholder="email@gmail.com|password|2fa_secret"></textarea>
+    <div class="btn-group">
+      <button id="loginBtn" class="btn-primary">Start Auto Login</button>
+      <button id="stopBtn" class="btn-secondary">Stop</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>2. Auto Send Email</h3>
+    <label>To:</label>
+    <input type="text" id="emailTo" value="doduytu@gmail.com">
+    <label>Subject:</label>
+    <input type="text" id="emailSubject" value="Thông báo từ WWProxy">
+    <label>Content:</label>
+    <textarea id="emailContent" placeholder="Nhập nội dung email vào đây..."></textarea>
+    <div class="btn-group">
+      <button id="sendMailBtn" class="btn-danger">Auto Send Email</button>
+    </div>
+  </div>
+
+  <div id="status" class="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
